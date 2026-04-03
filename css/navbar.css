@@ -1,0 +1,48 @@
+.navbar {
+    background: #1f2d3d;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-wrap img {
+    width: 36px;
+}
+
+.logo-text {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo-text span {
+    color: #27ae60;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.nav-menu .active {
+    border-bottom: 2px solid #27ae60;
+}
+
+.btn-nav {
+    background: #27ae60;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.btn-nav.danger {
+    background: #c0392b;
+}
