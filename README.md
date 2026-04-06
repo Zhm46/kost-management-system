@@ -1,18 +1,34 @@
 ## Sistem Manajemen Kost (Kost.in)
 
-Sistem manajemen kost berbasis web yang dibangun menggunakan PHP dan MySQL.  
-Aplikasi ini menyediakan fitur CRUD data kamar serta autentikasi admin, dan dilengkapi dengan pengujian manual menggunakan test case dan dokumentasi bug report.
+Sistem manajemen kost berbasis web yang dibangun menggunakan PHP Native dan MySQL.  
+Aplikasi ini memungkinkan pengguna untuk melihat dan memesan kamar, serta menyediakan dashboard admin untuk mengelola data kamar dan booking.
+
 
 ---
 
 ## Fitur Utama
 
+User (Public)
+- Melihat daftar kamar
+- Melihat detail kamar (harga, tipe, gambar, status)
+- Melakukan booking kamar melalui form
+- Mendapatkan notifikasi setelah booking
+
+ Admin
 - Login Admin
 - CRUD Data Kamar (Tambah, Edit, Hapus)
-- Akses publik (customer) untuk melihat data kamar (read-only)
-- Upload gambar kamar
-- Tampilan responsive
-- Pemesanan kamar langsung melalui WhatsApp
+- Melihat data booking user
+- Approve / Reject booking
+
+---
+
+Alur Sistem
+
+1. User memilih kamar
+2. User melakukan booking
+3. Data tersimpan dengan status **pending**
+4. Admin mengecek booking
+5. Admin approve → status jadi **approved**
 
 ---
 
@@ -60,6 +76,7 @@ Import ke MySQL menggunakan phpMyAdmin atau MySQL CLI.
 Project ini dibuat sebagai portofolio untuk melamar posisi:
 - QA Engineer Intern
 - Backend Developer Intern
+- Fullstack Developer Intern
 
 ---
 
