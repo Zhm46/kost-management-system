@@ -26,6 +26,7 @@ $isAdmin = isset($_SESSION['admin']);
 
         <?php if($isAdmin): ?>
             <a href="tambah.php" class="btn-nav">Tambah</a>
+            <a href="booking_admin.php" class="btn-nav">Booking</a>
             <a href="logout.php" class="btn-nav danger">Logout</a>
         <?php else: ?>
             <a href="login.php" class="btn-nav">Login</a>
@@ -46,20 +47,15 @@ while($k = mysqli_fetch_assoc($q)):
         <div class="kamar-thumb">
             <img src="uploads/<?= $k['gambar']; ?>" alt="Kamar">
 
-
-            <!-- ✅ SATU BADGE SAJA -->
             <span class="badge <?= $k['status']; ?>">
                 <?= ucfirst($k['status']); ?>
             </span>
         </div>
 
         <div class="kamar-body">
-            <?php if(!$isAdmin): ?>
-            <a href="https://wa.me/6281957319081?text=Halo%20Admin,%20saya%20tertarik%20dengan%20Kamar%20<?= $k['nomor_kamar']; ?>"
-            class="btn-kamar"
-            target="_blank">
-            Pesan via WhatsApp
-        </a>
+        <?php if(!$isAdmin): ?>
+        <a href="booking.php?id=<?= $k['id_kamar']; ?>" class="btn-kamar">
+            Booking Sekarang </a>
         <?php endif; ?>
 
             <h3>Kamar <?= $k['nomor_kamar']; ?></h3>
