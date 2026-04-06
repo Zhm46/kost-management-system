@@ -1,61 +1,61 @@
 <?php
-session_start();
 include 'koneksi.php';
 
-if(!isset($_SESSION['admin'])){
-    header("Location: login.php");
-    exit;
-}
+$id = $_GET['id'];
 
-$q = mysqli_query($koneksi, "
-SELECT booking.*, kamar.nomor_kamar 
-FROM booking 
-JOIN kamar ON booking.kamar_id = kamar.id_kamar
-ORDER BY booking.id DESC
-");
+$q = mysqli_query($koneksi, "SELECT * FROM kamar WHERE id_kamar='$id'");
+$k = mysqli_fetch_assoc($q);
 ?>
 
-<!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Data Booking</title>
-    <link rel="stylesheet" href="css/booking_admin.css">
+    <meta charset="UTF-8">
+    <title>Booking Kamar</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/booking.css">
+
 </head>
 <body>
 
-<h2>Data Booking</h2>
+<div class="booking-container">
+    <h2>Booking Kamar</h2>
 
-<table>
-    <tr>
-        <th>No</th>
-        <th>Nama</th>
-        <th>No HP</th>
-        <th>Kamar</th>
-        <th>Tanggal Masuk</th>
-        <th>Status</th>
-        <th>Aksi</th>
-    </tr>
+    <div class="info-kamar">
+    <img src="uploads/<?= $k['gambar']; ?>" class="img-kamar">
+        <p><strong>Kamar:</strong> <?= $k['nomor_kamar']; ?></p>
+        <p><strong>Tipe:</strong> <?= $k['tipe_kamar']; ?></p>
+        <p><strong>Harga:</strong> Rp <?= number_format($k['harga']); ?>/bulan</p>
+    </div>
 
-<?php $no=1; while($b = mysqli_fetch_assoc($q)): ?>
-<tr>
-    <td><?= $no++; ?></td>
-    <td><?= $b['nama']; ?></td>
-    <td><?= $b['no_hp']; ?></td>
-    <td>Kamar <?= $b['nomor_kamar']; ?></td>
-    <td><?= $b['tanggal_masuk']; ?></td>
-    <td><?= $b['status']; ?></td>
-    <td>
-        <?php if($b['status'] == 'pending'): ?>
-            <a href="approve.php?id=<?= $b['id']; ?>">Approve</a>
-            <a href="reject.php?id=<?= $b['id']; ?>">Reject</a>
-        <?php else: ?>
-            -
-        <?php endif; ?>
-    </td>
-</tr>
-<?php endwhile; ?>
+    <?php if(isset($_GET['success'])): ?>
+    <div class="success-msg">
+        Booking berhasil dikirim! Tunggu konfirmasi admin.
+    </div>
+    <?php endif; ?>
 
-</table>
+    <?php if(isset($_GET['error'])): ?>
+    <div class="error-msg">
+        Semua field wajib diisi!
+    </div>
+    <?php endif; ?>
+
+    <form action="proses_booking.php" method="POST">
+        <input type="hidden" name="kamar_id" value="<?= $k['id_kamar']; ?>">
+
+        <label>Nama</label>
+        <input type="text" name="nama" required>
+
+        <label>No HP</label>
+        <input type="text" name="no_hp" required>
+
+        <label>Tanggal Masuk</label>
+        <input type="date" name="tanggal_masuk" required>
+
+        <button type="submit">Booking Sekarang</button>
+    </form>
+</div>
 
 </body>
 </html>
