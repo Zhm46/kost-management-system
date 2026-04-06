@@ -1,0 +1,78 @@
+.booking-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.booking-container h2 {
+    margin-bottom: 10px;
+}
+
+.info-kamar {
+    margin-bottom: 20px;
+    padding: 12px;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.info-kamar p {
+    margin: 5px 0;
+}
+
+.img-kamar {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.booking-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.booking-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.booking-container button {
+    width: 100%;
+    padding: 12px;
+    background: #2ecc71;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.booking-container button:hover {
+    background: #27ae60;
+}
+
+/* pesan sukses */
+.success-msg {
+    background: #d4edda;
+    color: #155724;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* pesan error */
+.error-msg {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}

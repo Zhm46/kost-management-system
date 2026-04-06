@@ -1,0 +1,43 @@
+body {
+    font-family: Arial;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th {
+    background: #333;
+    color: white;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+a {
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a[href*="approve"] {
+    background: green;
+    color: white;
+}
+
+a[href*="reject"] {
+    background: red;
+    color: white;
+}
