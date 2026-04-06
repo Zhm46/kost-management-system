@@ -2,13 +2,11 @@
 session_start();
 include 'koneksi.php';
 
-// cek admin
 if(!isset($_SESSION['admin'])){
     header("Location: login.php");
     exit;
 }
 
-// ambil data booking + join kamar
 $q = mysqli_query($koneksi, "
 SELECT booking.*, kamar.nomor_kamar 
 FROM booking 
