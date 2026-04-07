@@ -73,10 +73,7 @@ Import ke MySQL menggunakan phpMyAdmin atau MySQL CLI.
 
 ## Tujuan Project
 
-Project ini dibuat sebagai portofolio untuk melamar posisi:
-- QA Engineer Intern
-- Backend Developer Intern
-- Fullstack Developer Intern
+Project ini dibuat sebagai portofolio untuk menunjukkan kemampuan dalam pengembangan aplikasi web, pengujian sistem, serta analisis dan pemecahan masalah dalam sistem berbasis teknologi informasi.
 
 ---
 
